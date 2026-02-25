@@ -1,0 +1,97 @@
+/* App-specific styles */
+
+/* Smooth scrolling disabled for GSAP control */
+html {
+  scroll-behavior: auto;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F6F8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0B1A2F;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a2d47;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(198, 154, 44, 0.3);
+  color: #0B1A2F;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #C69A2C;
+  outline-offset: 2px;
+}
+
+/* Image treatment for cool film grade */
+.img-film-grade {
+  filter: contrast(1.05) saturate(0.92);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Mobile menu animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-slide-in {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+.menu-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
