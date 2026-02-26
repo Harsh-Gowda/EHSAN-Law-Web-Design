@@ -27,10 +27,13 @@ const Footer = () => {
           }
         }
       );
+
+      // Force an initial refresh to ensure footer is positioned correctly
+      ScrollTrigger.refresh();
     }, footerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [location.pathname]);
 
   const handleLinkClick = (link: { label: string, path: string, id?: string }) => {
     if (location.pathname === link.path && link.id) {
@@ -62,15 +65,19 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="bg-navy text-white py-16 lg:py-20"
+      className="bg-navy text-white py-16 lg:py-20 pb-24 lg:pb-20"
     >
       <div className="px-6 lg:px-[6vw]">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12 lg:mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" onClick={() => handleLinkClick(quickLinks[0])} className="font-serif text-2xl lg:text-3xl mb-4 block hover:text-gold transition-colors">
-              EHSAN LAW
+            <Link to="/" onClick={() => handleLinkClick(quickLinks[0])} className="mb-6 block group">
+              <img
+                src="/logo.png"
+                alt="Ehsaan Law Logo"
+                className="h-24 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
+              />
             </Link>
             <p className="text-white/70 text-sm mb-6">
               Clear counsel. Respectful representation.

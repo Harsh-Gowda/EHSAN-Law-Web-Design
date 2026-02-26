@@ -19,7 +19,7 @@ const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const leftColRef = useRef<HTMLDivElement>(null);
   const rightColRef = useRef<HTMLDivElement>(null);
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -69,10 +69,10 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setSubmitted(true);
   };
@@ -115,16 +115,16 @@ const ContactSection = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="bg-white py-20 lg:py-32"
+      className="bg-white py-12 md:py-24 lg:py-32"
     >
-      <div className="px-6 lg:px-[6vw]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+      <div className="px-6 md:px-12 lg:px-[6vw]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Info */}
           <div ref={leftColRef}>
             <h2 className="heading-lg text-navy mb-6">
               Get in Touch
             </h2>
-            
+
             <p className="body-text text-gray mb-10">
               Tell us a little about your situation. We will respond within 1–2 business days to schedule a consultation.
             </p>
@@ -186,7 +186,7 @@ const ContactSection = () => {
                         placeholder="Your full name"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm text-navy mb-2">
                         Email *
@@ -215,7 +215,7 @@ const ContactSection = () => {
                         placeholder="(206) 555-0123"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm text-navy mb-2">
                         Case Type

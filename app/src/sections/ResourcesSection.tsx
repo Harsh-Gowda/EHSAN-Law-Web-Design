@@ -2,6 +2,8 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { blogPosts } from '../lib/blogData';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,6 +11,7 @@ const ResourcesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,44 +55,29 @@ const ResourcesSection = () => {
     return () => ctx.revert();
   }, []);
 
-  const resources = [
-    {
-      title: 'How to Prepare for Your Immigration Interview',
-      excerpt: 'Essential tips and a comprehensive checklist to help you feel confident and prepared for your USCIS interview.',
-      image: '/resource_documents.jpg',
-      date: 'January 15, 2026',
-      category: 'Guides',
-    },
-    {
-      title: 'Understanding the Affidavit of Support',
-      excerpt: 'A detailed explanation of Form I-864, including sponsor requirements, income thresholds, and legal obligations.',
-      image: '/resource_legal.jpg',
-      date: 'January 10, 2026',
-      category: 'Family Immigration',
-    },
-    {
-      title: 'Business Immigration: A Checklist for Employers',
-      excerpt: 'Key steps and documentation requirements for employers sponsoring foreign workers for temporary or permanent visas.',
-      image: '/resource_business.jpg',
-      date: 'January 5, 2026',
-      category: 'Employment',
-    },
-  ];
-
   return (
     <section
       ref={sectionRef}
-      className="bg-cream py-20 lg:py-32"
+      className="bg-cream py-12 md:py-24 lg:py-32"
     >
-      <div className="px-6 lg:px-[6vw]">
+      <div className="px-6 md:px-12 lg:px-[6vw]">
         {/* Heading */}
-        <div ref={headingRef} className="mb-12 lg:mb-16">
-          <h2 className="heading-lg text-navy mb-4">
-            Resources & Insights
-          </h2>
-          <p className="body-text text-gray max-w-2xl">
-            Stay informed with the latest immigration news, policy updates, and practical guides.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-12 lg:mb-16">
+          <div ref={headingRef}>
+            <h2 className="heading-lg text-navy mb-4">
+              Resources & Insights
+            </h2>
+            <p className="body-text text-gray max-w-2xl">
+              Stay informed with the latest immigration news, policy updates, and practical guides.
+            </p>
+          </div>
+          <button
+            onClick={() => navigate('/blog')}
+            className="inline-flex items-center gap-2 text-navy font-bold hover:text-gold transition-colors link-underline group whitespace-nowrap"
+          >
+            View All Articles
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
 
         {/* Resource Cards */}
@@ -97,16 +85,17 @@ const ResourcesSection = () => {
           ref={cardsRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
-          {resources.map((resource, index) => (
+          {blogPosts.slice(0, 3).map((post, index) => (
             <article
               key={index}
+              onClick={() => navigate(`/blog/${post.id}`)}
               className="resource-card bg-white rounded-3xl overflow-hidden card-shadow card-hover cursor-pointer group"
             >
               {/* Image */}
               <div className="h-48 overflow-hidden">
                 <img
-                  src={resource.image}
-                  alt={resource.title}
+                  src={post.image}
+                  alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -115,20 +104,20 @@ const ResourcesSection = () => {
               <div className="p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs font-medium text-gold uppercase tracking-wider">
-                    {resource.category}
+                    {post.category}
                   </span>
                   <span className="flex items-center gap-1 text-xs text-gray">
                     <Calendar className="w-3 h-3" />
-                    {resource.date}
+                    {post.date}
                   </span>
                 </div>
 
                 <h3 className="font-serif text-xl text-navy mb-3 group-hover:text-gold transition-colors">
-                  {resource.title}
+                  {post.title}
                 </h3>
 
                 <p className="text-sm text-gray mb-4 line-clamp-2">
-                  {resource.excerpt}
+                  {post.excerpt}
                 </p>
 
                 <span className="inline-flex items-center gap-2 text-navy text-sm font-medium group-hover:text-gold transition-colors">

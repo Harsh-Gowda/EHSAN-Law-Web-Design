@@ -47,7 +47,7 @@ const CitizenshipSection = () => {
       ref={sectionRef}
       id="citizenship"
       style={{ scrollMarginTop: '80px' }}
-      className="w-full relative min-h-screen flex flex-col items-center justify-center py-20 lg:py-32 px-6 lg:px-[6vw] overflow-hidden"
+      className="w-full relative py-12 md:py-24 lg:py-32 min-h-[60vh] flex flex-col items-center justify-center px-6 md:px-12 overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -60,7 +60,7 @@ const CitizenshipSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="relative w-full max-w-7xl flex flex-col md:flex-row lg:flex-row items-start md:items-center justify-between gap-10 md:gap-12 lg:gap-12">
         {/* Headline */}
         <div ref={headlineRef} className="w-full lg:w-1/3">
           <p className="caption-text text-gold mb-4">Service Area</p>

@@ -15,6 +15,8 @@ import DeportationDefensePage from './pages/DeportationDefensePage';
 import CitizenshipPage from './pages/CitizenshipPage';
 import AsylumPage from './pages/AsylumPage';
 import ServicesPage from './pages/ServicesPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
           <Route path="attorney" element={<AttorneyPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="faq" element={<FAQPage />} />
+          <Route path="blog" element={<BlogPage />} />
+          <Route path="blog/:id" element={<BlogPostPage />} />
           <Route path="resources" element={<ResourcesPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/family-immigration" element={<FamilyImmigrationPage />} />

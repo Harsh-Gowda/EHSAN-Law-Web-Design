@@ -22,6 +22,7 @@ const Navigation = () => {
     { label: 'About', path: '/about', id: 'about' },
     { label: 'Services', path: '/services', id: 'services' },
     { label: 'Attorney', path: '/attorney', id: 'attorney' },
+    { label: 'Blog', path: '/blog', id: 'blog' },
     { label: 'FAQ', path: '/faq', id: 'faq' },
     { label: 'Contact', path: '/contact', id: 'contact' },
   ];
@@ -74,10 +75,14 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => handleNavClick(navLinks[0])}
-            className={`font-serif text-xl lg:text-2xl font-semibold tracking-tight transition-colors ${shouldShowSolid ? 'text-navy' : 'text-white'
-              }`}
+            className="flex items-center gap-2 group"
           >
-            EHSAN LAW
+            <img
+              src="/logo.png"
+              alt="Ehsaan Law Logo"
+              className={`h-16 lg:h-24 w-auto transition-all duration-300 ${shouldShowSolid ? 'brightness-100' : 'brightness-0 invert'
+                }`}
+            />
           </button>
 
           {/* Desktop Navigation */}
@@ -134,9 +139,11 @@ const Navigation = () => {
           <div className="relative h-full flex flex-col">
             {/* Header */}
             <div className="flex items-center justify-between px-6 lg:px-12 py-6">
-              <span className="font-serif text-xl lg:text-2xl font-semibold text-white">
-                EHSAN LAW
-              </span>
+              <img
+                src="/logo.png"
+                alt="Ehsaan Law Logo"
+                className="h-16 lg:h-24 w-auto brightness-0 invert"
+              />
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="p-2 text-white hover:text-gold transition-colors"
@@ -194,7 +201,7 @@ const Navigation = () => {
           Call Now
         </a>
         <button
-          onClick={() => handleNavClick(navLinks[5])}
+          onClick={() => handleNavClick(navLinks[6])}
           className="bg-gold text-navy px-5 py-2.5 rounded-full text-sm font-medium"
         >
           Free Consultation

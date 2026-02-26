@@ -40,37 +40,41 @@ const DeportationDefense = () => {
       ref={sectionRef}
       id="deportation-defense"
       style={{ scrollMarginTop: '80px' }}
-      className="w-full bg-cream flex flex-col lg:flex-row min-h-screen py-20 lg:py-32"
+      className="w-full bg-cream py-8 md:py-12 lg:py-16 min-h-[60vh] flex items-center"
     >
-      {/* Left Image */}
-      <div ref={imageCardRef} className="w-full lg:w-[58%] h-[45vh] lg:min-h-screen">
-        <img
-          src="/service_courthouse_hall.jpg"
-          alt="Courthouse hall"
-          className="w-full h-full object-cover img-film-grade"
-        />
-      </div>
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="flex flex-col md:flex-row gap-10 md:gap-12 lg:gap-16 items-stretch">
+          {/* Large Left Image - Order 1 */}
+          <div ref={imageCardRef} className="w-full md:w-1/2 rounded-3xl overflow-hidden card-shadow min-h-[300px] md:min-h-[500px] aspect-[4/3] md:aspect-auto">
+            <img
+              src="/service_courthouse_hall.jpg"
+              alt="Courthouse hall"
+              className="w-full h-full object-cover img-film-grade"
+            />
+          </div>
 
-      {/* Right Navy Info Panel */}
-      <div
-        ref={infoCardRef}
-        className="w-full lg:w-[42%] bg-navy flex flex-col justify-center px-6 lg:px-12 py-16 lg:py-20"
-      >
-        <p className="caption-text text-gold mb-4">Service Area</p>
-        <h2 className="heading-lg text-white mb-6">Deportation Defense</h2>
-        <p className="body-text text-white/80 mb-8">
-          If you or a loved one is in removal proceedings, we act quickly to assess relief options, prepare evidence, and advocate in court—with clarity and urgency.
-        </p>
-        <ul className="space-y-3">
-          {services.map((service, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center mt-0.5">
-                <Check className="w-3 h-3 text-gold" />
-              </span>
-              <span className="text-white/90 text-sm">{service}</span>
-            </li>
-          ))}
-        </ul>
+          {/* Right Navy Info Panel - Order 2 */}
+          <div
+            ref={infoCardRef}
+            className="w-full md:w-1/2 bg-navy rounded-3xl card-shadow flex flex-col justify-center p-8 md:p-12 lg:p-16"
+          >
+            <p className="caption-text text-gold mb-4">Service Area</p>
+            <h2 className="heading-lg text-white mb-6">Deportation Defense</h2>
+            <p className="body-text text-white/80 mb-8">
+              If you or a loved one is in removal proceedings, we act quickly to assess relief options, prepare evidence, and advocate in court—with clarity and urgency.
+            </p>
+            <ul className="space-y-3">
+              {services.map((service, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center mt-0.5">
+                    <Check className="w-3 h-3 text-gold" />
+                  </span>
+                  <span className="text-white/90 text-sm">{service}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -50,20 +50,20 @@ const HeroSection = () => {
       {/* Background Image */}
       <div ref={bgRef} className="absolute inset-0">
         <img
-          src="/hero_courtroom_light.jpg"
-          alt="Law office"
+          src="/hero_family_hands.jpg"
+          alt="Law office team"
           className="w-full h-full object-cover img-film-grade"
         />
         <div className="absolute inset-0 bg-navy/60" />
       </div>
 
       {/* Main Content */}
-      <div className="relative h-full min-h-[100svh] flex flex-col lg:flex-row items-center lg:items-center px-6 lg:px-[6vw] py-20 lg:py-0 justify-center lg:justify-between gap-8 lg:gap-6">
+      <div className="relative h-full min-h-[100svh] container mx-auto flex flex-col lg:flex-row items-center lg:items-center px-6 md:px-12 lg:px-12 py-16 md:py-24 lg:py-0 justify-center lg:justify-between gap-12 md:gap-16 lg:gap-6">
 
         {/* Left Call Card */}
         <div
           ref={leftCardRef}
-          className="w-full lg:w-[42vw] bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 lg:p-10 will-change-transform"
+          className="w-full md:w-[80%] lg:w-[42vw] bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 md:p-8 lg:p-10 will-change-transform"
         >
           <p className="caption-text text-gold mb-3 lg:mb-4 text-xs lg:text-sm uppercase tracking-widest font-bold">Immigration Law Firm · Seattle</p>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
@@ -86,19 +86,19 @@ const HeroSection = () => {
         {/* Right Stats Card */}
         <div
           ref={rightCardRef}
-          className="w-full lg:w-[26vw] bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 lg:p-10 will-change-transform"
+          className="w-full md:w-[80%] lg:w-[26vw] bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 md:p-8 lg:p-10 will-change-transform"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6">
-            <div className="border-b sm:border-b-0 lg:border-b border-white/15 pb-6 sm:pb-0 lg:pb-6">
-              <p className="text-3xl lg:text-4xl font-bold text-white mb-1">15+</p>
+          <div className="grid grid-cols-3 lg:grid-cols-1 gap-4 lg:gap-6">
+            <div className="border-b-0 lg:border-b border-white/15 pb-0 lg:pb-6">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">15+</p>
               <p className="caption-text text-white/60 text-[10px] lg:text-xs">Years of Experience</p>
             </div>
-            <div className="border-b sm:border-b-0 lg:border-b border-white/15 pb-6 sm:pb-0 lg:pb-6">
-              <p className="text-3xl lg:text-4xl font-bold text-white mb-1">2,000+</p>
+            <div className="border-b-0 lg:border-b border-white/15 pb-0 lg:pb-6">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">2,000+</p>
               <p className="caption-text text-white/60 text-[10px] lg:text-xs">Cases Handled</p>
             </div>
             <div>
-              <p className="text-3xl lg:text-4xl font-bold text-white mb-1">98%</p>
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">98%</p>
               <p className="caption-text text-white/60 text-[10px] lg:text-xs">Client Satisfaction</p>
             </div>
           </div>
