@@ -67,8 +67,8 @@ const Navigation = () => {
       {/* Main Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${shouldShowSolid
-          ? 'bg-white/95 backdrop-blur-md shadow-sm py-4'
-          : 'bg-transparent py-6'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm py-2'
+          : 'bg-transparent py-4'
           }`}
       >
         <div className="px-6 lg:px-12 flex items-center justify-between">
@@ -80,7 +80,7 @@ const Navigation = () => {
             <img
               src="/logo.png"
               alt="Ehsaan Law Logo"
-              className={`h-16 lg:h-24 w-auto transition-all duration-300 ${shouldShowSolid ? 'brightness-100' : 'brightness-0 invert'
+              className={`h-12 lg:h-16 w-auto transition-all duration-300 ${shouldShowSolid ? 'brightness-100' : 'brightness-0 invert'
                 }`}
             />
           </button>
